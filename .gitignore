@@ -6,4 +6,5 @@ images
 images_to_use
 dataset
 annotations
+export
 .env

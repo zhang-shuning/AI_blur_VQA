@@ -1,8 +1,11 @@
+'''File for testing OpenCV, and also toa export images with a specific blur'''
 import cv2
-import time
+
+BLUR = 5
 
 img = cv2.imread(r'C:\Users\user\Desktop\Python\ai-testing-ig\images_to_use\Abyssinian_1.jpg', cv2.IMREAD_UNCHANGED)
 # (5, 5) is the kernel size; 0 lets OpenCV auto-calculate the standard deviation (sigmaX)
-gaussian_blur = cv2.GaussianBlur(img, (101, 101), 0)
+gaussian_blur = cv2.GaussianBlur(img, (BLUR, BLUR), 0)
+cv2.imwrite(f"export/blur_{BLUR}.jpg", gaussian_blur)
 cv2.imshow("a", gaussian_blur)
 cv2.waitKey(0)

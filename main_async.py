@@ -13,9 +13,7 @@ from PIL import Image
 
 RUN_AI = True
 BLUR_IMAGE = True
-BLUR_STRENGTH = 41
-
-RUN = "Control"
+BLUR_STRENGTH = 101
 
 current_num_path = pathlib.Path(r'data\current_num.dat')
 images = pathlib.Path("images_to_use")
@@ -126,8 +124,6 @@ async def main():
     name = ""
     async with asyncio.TaskGroup() as tg:
         for file in files:
-            #if count == 5:
-                #break
             count += 1
             name = get_name(file)
             task = tg.create_task(send_image(count,name,file))
